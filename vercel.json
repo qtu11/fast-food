@@ -1,5 +1,13 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "source": "/feedback/((?!general).*)",
-  "destination": "/api/feedback/general"
+  "source": "/feedback/:id",
+  "destination": "/api/feedback/:id"
+}
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "functions": {
+    "pages/api/users/**/*.js": {
+      "maxDuration": 30
+    }
+  }
 }
